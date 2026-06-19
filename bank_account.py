@@ -20,3 +20,15 @@ class BankAccount:
             self.__account_balance -= amount
         else:
             print("Insufficient funds.")
+
+    def check_balance(self):
+        """
+        Returns the current account balance.
+        """
+        return self.__account_balance
+    
+    def get_account_number(self):
+        """
+        Returns the account number.
+        """
+        return self.__account_number
