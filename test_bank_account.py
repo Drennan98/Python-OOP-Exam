@@ -1,5 +1,7 @@
+# Impirt unittest framework
 import unittest
 
+# Import classes we are testing from the bank_account.py file
 from bank_account import BankAccount, SavingsAccount, CurrentAccount
 
 class TestBankAccounts(unittest.TestCase):
@@ -17,5 +19,6 @@ class TestBankAccounts(unittest.TestCase):
         account = SavingsAccount("S001", 1000, 0.05)
         self.assertEqual(account.calculate_interest(), 50)
 
-if __name__ == "__main__":
+# This allows the tests to run where the file is executed directly
+if __name__== "__main__":
     unittest.main()
