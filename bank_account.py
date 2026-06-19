@@ -46,3 +46,22 @@ class SavingsAccount(BankAccount):
         Calculates the interest earned.
         """
         return self.check_balance() * self.__interest_rate
+    
+class CurrentAccount(BankAccount):
+    """
+    Represents a current acount with transction fees.
+    """
+    def __init__(self, account_number, account_balance, transaction_fee):
+        super().__init__(account_number, account_balance)
+        self.__transaction_fee = transaction_fee
+
+    def withdraw(self, amount):
+        """
+        Withdraws money and applies a transaction fee.
+        """
+        total_amount = amount + self.__transaction_fee
+
+        if total_amount <= self.check_balance():
+            super().withdraw(total_amount)
+        else:
+            print("Insufficient fees.")
