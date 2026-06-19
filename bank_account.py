@@ -32,3 +32,17 @@ class BankAccount:
         Returns the account number.
         """
         return self.__account_number
+    
+class SavingsAccount(BankAccount):
+    """
+    Represents a savings account with an interest rate.
+    """
+    def __init__(self, account_number, account_balance, interest_rate):
+        super().__init__(account_number, account_balance)
+        self.__interest_rate = interest_rate
+
+    def calculate_interest(self):
+        """
+        Calculates the interest earned.
+        """
+        return self.check_balance() * self.__interest_rate
